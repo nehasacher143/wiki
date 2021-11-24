@@ -3,12 +3,13 @@
 <!--sidebar-->
 {%- endblock -%}
 
-{%- block head_include %}
+{%- block head %}
 {{ super() }}
-{{ include_style('wiki.bundle.css') }}
+{% block style %}
 {%- if frappe.form_dict.edit or frappe.form_dict.new -%}
-{{ include_style('edit_wiki.bundle.css') }}
+<link type="text/css" rel="stylesheet" href="/assets/wiki/scss/edit_wiki.bundle.scss">
 {%- endif -%}
+{% endblock %}
 
 {% endblock -%}
 
@@ -25,4 +26,3 @@
 {% include "wiki/doctype/wiki_page/templates/wiki_navbar.html" %}
 
 {%- endblock -%}
-

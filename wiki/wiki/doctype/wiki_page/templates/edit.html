@@ -23,14 +23,13 @@
 		<ul class="nav nav-tabs" role="tablist">
 
 			<li class="nav-item" role="presentation">
-				<a {% if not wiki_page_patch %} class="nav-link active" {% else %} class="nav-link" {% endif %}
-					id="write-tab" data-toggle="tab" href="#write" role="tab" aria-controls="write"
-					aria-selected="true">Write</a>
+				<a {% if not wiki_page_patch %} class="nav-link active" {% else %} class="nav-link" {% endif %} id="write-tab"
+					data-toggle="tab" href="#write" role="tab" aria-controls="write" aria-selected="true">Write</a>
 			</li>
 
 			<li class="nav-item" role="presentation">
-				<a class="nav-link" id="preview-tab" data-toggle="tab" href="#preview" role="tab"
-					aria-controls="preview" aria-selected="false">Preview</a>
+				<a class="nav-link" id="preview-tab" data-toggle="tab" href="#preview" role="tab" aria-controls="preview"
+					aria-selected="false">Preview</a>
 			</li>
 
 			{%- if not frappe.form_dict.new -%}
@@ -42,8 +41,8 @@
 
 			{% if wiki_page_patch %}
 			<li class="nav-item" role="presentation">
-				<a {% if wiki_page_patch %} class="nav-link active" {% else %} class="nav-link" {% endif %}
-					id="discussion-tab" data-toggle="tab" href="#discussion" role="tab" aria-controls="discussion"
+				<a {% if wiki_page_patch %} class="nav-link active" {% else %} class="nav-link" {% endif %} id="discussion-tab"
+					data-toggle="tab" href="#discussion" role="tab" aria-controls="discussion"
 					aria-selected="false">Discussion</a>
 			</li>
 			{% endif %}
@@ -52,8 +51,8 @@
 
 		<div class="mt-4 tab-content">
 
-			<div {% if not wiki_page_patch %} class="tab-pane fade show active" {% else %} class="tab-pane fade" {%
-				endif %} id="write" role="tabpanel" aria-labelledby="write-tab">
+			<div {% if not wiki_page_patch %} class="tab-pane fade show active" {% else %} class="tab-pane fade" {% endif %}
+				id="write" role="tabpanel" aria-labelledby="write-tab">
 				<div class="form-control wiki-content-md" hidden>{{ content_md }}</div>
 				<div class="form-control wiki-content-html" hidden>{{ content_html }}</div>
 				<div class="wiki-write"></div>
@@ -66,12 +65,12 @@
 			{%- if not frappe.form_dict.new -%}
 			<div class="tab-pane fade" id="diff" role="tabpanel" aria-labelledby="preview-tab">
 				<h4>Edited Page</h3>
-				<div class="from-markdown wiki-diff"></div>
-				{%- if sidebar_edited -%}
-				<hr>
-				<h4>Edited Sidebar</h3>
-				<div class=" sidebar-diff"></div>
-				{%- endif -%}
+					<div class="from-markdown wiki-diff"></div>
+					{%- if sidebar_edited -%}
+					<hr>
+					<h4>Edited Sidebar</h3>
+						<div class=" sidebar-diff"></div>
+						{%- endif -%}
 
 			</div>
 
@@ -95,7 +94,7 @@
 <!-- js should be loaded in body! -->
 <script type="text/javascript" src="/assets/frappe/js/lib/jquery/jquery.min.js"></script>
 <script src="https://unpkg.com/turndown@7.0.0/dist/turndown.js"></script>
-{{ include_script('libs.bundle.js') }}
+<script type="text/javascript" src="/assets/frappe/js/libs.min.js"></script>
 
 {{ include_script('frappe-web.bundle.js') }}
 {{ include_script('controls.bundle.js') }}
@@ -105,7 +104,6 @@
 <script type="text/javascript"
 	src="/assets/frappe/node_modules/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
 {{ include_script('desk.bundle.js') }}
-{{ include_script('wiki.bundle.js') }}
 
 
 <script type="text/javascript" src="/assets/frappe/node_modules/vue/dist/vue.js"></script>
